@@ -1,0 +1,1035 @@
+.story {
+  --gutter: clamp(1.25rem, 5vw, 5.5rem);
+  --rule: #f4f1e82c;
+  overflow: clip;
+  background: #0a0a09;
+  color: #f4f1e8;
+}
+.story :is(section, h2) {
+  scroll-margin-top: 9rem;
+}
+.story a:focus-visible,
+.story summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+.progress {
+  position: sticky;
+  top: 4.5rem;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  min-height: 3rem;
+  padding: 0.65rem var(--gutter);
+  border-bottom: 1px solid var(--rule);
+  background: #0a0a09;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+.progress a {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 2rem;
+}
+.progress a:hover {
+  color: #f2c500;
+}
+.progress a:first-child {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.progress a:first-child span {
+  color: #f2c500;
+}
+.current {
+  color: #b8b5ac;
+}
+.current b {
+  color: #f2c500;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+.scene {
+  position: relative;
+  padding: clamp(4rem, 8vw, 8rem) var(--gutter);
+}
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.heading {
+  font-size: clamp(2.7rem, 6.5vw, 6.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+.prose {
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  line-height: 1.5;
+  max-width: 35ch;
+}
+.smallProse {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: #b8b5ac;
+  max-width: 48ch;
+}
+.textLink {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  min-height: 44px;
+  padding-block: 0.8rem;
+  border-bottom: 1px solid currentColor;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.textLink span {
+  font-size: 1.3rem;
+}
+.textLink:hover {
+  color: #f2c500;
+}
+.opening {
+  min-height: calc(100svh - 7rem);
+  padding-top: 2rem;
+  isolation: isolate;
+  overflow: clip;
+}
+.openingTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 2rem;
+}
+.openingTop h1 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.openingTop > p {
+  text-align: right;
+  font-size: 0.7rem;
+  line-height: 1.7;
+  color: #b8b5ac;
+}
+.openingYear {
+  position: absolute;
+  z-index: -1;
+  left: -0.045em;
+  top: 0.11em;
+  color: #262623;
+  font: 600 clamp(17rem, 48vw, 48rem) / 0.85 var(--font-barlow-condensed);
+  letter-spacing: -0.04em;
+}
+.openingCopy {
+  width: 53%;
+  margin: clamp(8rem, 20vw, 18rem) 0 2rem auto;
+}
+.openingCopy .eyebrow {
+  color: #f2c500;
+}
+.openingCopy h2 {
+  font-size: clamp(3rem, 5.5vw, 5.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+}
+.openingCopy .prose {
+  margin-top: 2rem;
+}
+.openingCopy .smallProse {
+  margin: 1.25rem 0 1.5rem;
+}
+.edgeNote {
+  position: absolute;
+  left: var(--gutter);
+  bottom: 4rem;
+  color: #b8b5ac;
+  font-size: 0.65rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.origins {
+  background: #f4f1e8;
+  color: #0a0a09;
+  view-timeline-name: --origins;
+  view-timeline-axis: block;
+}
+.originGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 4rem;
+  gap: clamp(2rem, 8vw, 8rem);
+}
+.originGrid > div {
+  min-width: 0;
+  position: relative;
+}
+.originYear {
+  font: 600 clamp(3rem, 6vw, 6rem) / 1 var(--font-barlow-condensed);
+  color: #625f55;
+  margin-bottom: 1rem;
+}
+.originGrid h3 {
+  font-size: clamp(3.5rem, 8.8vw, 8rem);
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+  margin-bottom: 2rem;
+}
+.originGrid p:last-of-type {
+  max-width: 36ch;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.rioBranco {
+  padding-left: 1.5rem;
+  border-left: 5px solid #f2c500;
+}
+.julho {
+  padding-left: 1.5rem;
+  border-left: 5px solid #0a0a09;
+}
+.originRule {
+  display: block;
+  height: 0.5rem;
+  margin-top: 3rem;
+  width: 80%;
+  background: #f2c500;
+}
+.julho .originRule {
+  background: #0a0a09;
+}
+.convergeNote {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #0a0a092c;
+  font-size: 0.8rem;
+}
+.foundation {
+  padding-top: 4rem;
+  padding-bottom: 0;
+}
+.foundation .eyebrow {
+  color: #f2c500;
+}
+.fusion {
+  font-size: 0.9rem;
+  margin: 2rem 0;
+}
+.fusion span {
+  color: #f2c500;
+  margin-inline: 1rem;
+}
+.foundationDate {
+  display: block;
+  font: 600 clamp(6rem, 19vw, 19rem) / 0.78 var(--font-barlow-condensed);
+  letter-spacing: -0.04em;
+}
+.foundationDate span {
+  color: #f2c500;
+}
+.foundationCopy {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: end;
+  margin-block: 3rem 5rem;
+}
+.foundationCopy h2 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+.foundationCopy > p {
+  color: #b8b5ac;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+.fusionBands {
+  height: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-inline: calc(-1 * var(--gutter));
+}
+.fusionBands span:first-child {
+  background: #f2c500;
+}
+.fusionBands span:last-child {
+  background: #1a1a18;
+}
+.homeSearch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 7vw, 7rem);
+  background: #1a1a18;
+  align-items: start;
+}
+.stickyCopy {
+  position: sticky;
+  top: 10rem;
+}
+.homeSearch .eyebrow {
+  color: #f2c500;
+}
+.fieldLine {
+  width: 100%;
+  max-width: 31rem;
+  stroke: #f2c500;
+  stroke-width: 1;
+  margin-block: 3rem 1rem;
+}
+.homeSteps article {
+  min-height: 55svh;
+  padding-block: 2rem 4rem;
+  border-top: 1px solid var(--rule);
+}
+.stepYear {
+  font: 600 clamp(4rem, 7vw, 7rem) / 1 var(--font-barlow-condensed);
+  margin-bottom: 1rem;
+}
+.homeSteps h3 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+.homeSteps article > p:not(.stepYear) {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  max-width: 42ch;
+  color: #b8b5ac;
+}
+.homeSteps .annotation {
+  margin-top: 1.5rem;
+  border-left: 2px solid #f2c500;
+  padding-left: 1rem;
+}
+.immortals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding-top: 6rem;
+}
+.immortalsAnchor {
+  position: sticky;
+  top: 10rem;
+}
+.immortals .eyebrow {
+  color: #f2c500;
+}
+.immortalsYear {
+  font: 600 clamp(7rem, 16vw, 16rem) / 0.85 var(--font-barlow-condensed);
+  letter-spacing: -0.03em;
+}
+.immortalsAnchor h2 {
+  font-size: clamp(2.75rem, 5.5vw, 5.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  margin-top: 2rem;
+}
+.beat {
+  min-height: 70svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid var(--rule);
+  padding-block: 3rem;
+}
+.invincible {
+  font: 700 clamp(4rem, 8vw, 8rem) / 1 var(--font-barlow-condensed);
+  text-transform: uppercase;
+  color: #f2c500;
+}
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.08em;
+  font: 600 clamp(6rem, 14vw, 14rem) / 0.9 var(--font-barlow-condensed);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.score i {
+  font-style: normal;
+  font-size: 0.5em;
+  font-weight: 600;
+  color: #f2c500;
+}
+.matchNames {
+  font-size: 0.75rem;
+  margin-block: 1.5rem;
+}
+.immortalName {
+  font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+  margin-bottom: 1.5rem;
+}
+.continuity {
+  background: #1a1a18;
+}
+.continuity .prose {
+  margin-top: 2rem;
+}
+.yearRun {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  list-style: none;
+  padding: 2rem 0;
+  margin-top: 2rem;
+  border-block: 1px solid var(--rule);
+  font: 600 clamp(3rem, 6.5vw, 6.5rem) / 1 var(--font-barlow-condensed);
+}
+.landNote {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: #b8b5ac;
+}
+.landNote span {
+  color: #f2c500;
+}
+.derby {
+  padding-block: 4rem;
+}
+.derbyTop {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.derbyTop .eyebrow {
+  color: #f2c500;
+}
+.derbyTop h2 {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+.derbyScore {
+  font-size: clamp(9rem, 36vw, 36rem);
+  margin-block: 2rem;
+}
+.derbyBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 2rem;
+}
+.derbyBottom p:first-child {
+  font-size: clamp(1.1rem, 2vw, 2rem);
+  font-weight: 600;
+}
+.derbyBottom p:last-child {
+  color: #b8b5ac;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+.newspaper {
+  background: #f4f1e8;
+  color: #0a0a09;
+}
+.paperMasthead {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.75rem;
+  border-block: 2px solid #0a0a09;
+  margin-bottom: 3rem;
+  font: 600 clamp(1rem, 2vw, 1.75rem) / 1 var(--font-barlow-condensed);
+  text-transform: uppercase;
+}
+.newspaper h2 {
+  font-size: clamp(3.3rem, 9vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+.paperColumns {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.7fr;
+  gap: 3rem;
+  border-top: 1px solid #0a0a0940;
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+.paperLead {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+.paperColumns > div > p {
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+.paperColumns > div > p + p {
+  margin-top: 1rem;
+}
+.paperResult {
+  border-left: 1px solid #0a0a0940;
+  padding-left: 2rem;
+}
+.paperResult b {
+  font: 600 clamp(2.5rem, 4.5vw, 4.5rem) / 1 var(--font-barlow-condensed);
+  white-space: nowrap;
+}
+.paperResult p {
+  margin-top: 1rem;
+}
+.paperResult span {
+  color: #625f55;
+}
+.paperFoot {
+  font-size: 0.65rem;
+  line-height: 1.6;
+  color: #625f55;
+  margin-top: 3rem;
+  border-top: 1px solid #0a0a0940;
+  padding-top: 1rem;
+}
+.resilience {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 4rem;
+  align-items: start;
+}
+.resilience h2 span {
+  color: #f2c500;
+}
+.terraces {
+  list-style: none;
+}
+.terraces li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  border-top: 2px solid #f2c500;
+  padding-block: 2rem 3rem;
+  margin-left: calc(var(--step, 0) * 1rem);
+}
+.terraces li:nth-child(2) {
+  --step: 1;
+}
+.terraces li:nth-child(3) {
+  --step: 2;
+}
+.terraces li:nth-child(4) {
+  --step: 3;
+}
+.terraces li:nth-child(5) {
+  --step: 4;
+}
+.terraces li > span {
+  font: 600 clamp(2.7rem, 4vw, 4rem) / 1 var(--font-barlow-condensed);
+}
+.terraces h3 {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.terraces p {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: #b8b5ac;
+  margin-top: 0.5rem;
+}
+.lights {
+  background: #1a1a18;
+  view-timeline-name: --lights;
+  view-timeline-axis: block;
+}
+.lightsHeading {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1rem 3rem;
+  align-items: end;
+  margin-bottom: 3rem;
+}
+.lightsHeading .eyebrow {
+  grid-column: 1 / -1;
+  color: #f2c500;
+}
+.lightsHeading > p:last-child {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #b8b5ac;
+}
+.stadiumFrame {
+  overflow: clip;
+}
+.stadiumImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform-origin: center;
+}
+.stadiumFigure figcaption {
+  font-size: 0.7rem;
+  color: #b8b5ac;
+  line-height: 1.7;
+  margin-top: 1rem;
+  max-width: 66ch;
+}
+.centennial {
+  background: #f4f1e8;
+  color: #0a0a09;
+}
+.hundred {
+  font: 600 clamp(10rem, 38vw, 38rem) / 0.8 var(--font-barlow-condensed);
+  letter-spacing: -0.055em;
+  padding-top: 1rem;
+  display: flex;
+  gap: 0.08em;
+  align-items: end;
+}
+.hundred span {
+  font: 600 clamp(1.5rem, 5vw, 5rem) / 1 var(--font-barlow-condensed);
+  letter-spacing: -0.025em;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.centennialCopy {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  border-top: 3px solid #0a0a09;
+  padding-top: 2rem;
+}
+.centennialCopy h2 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+.centennialCopy > p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 40ch;
+}
+.present {
+  padding-block: clamp(5rem, 10vw, 10rem);
+}
+.present .eyebrow {
+  color: #f2c500;
+}
+.present h2 {
+  font-size: clamp(2.35rem, 5.6vw, 5.6rem);
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+}
+.present h2 span {
+  color: #f2c500;
+}
+.presentBottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+.presentBottom > p {
+  color: #b8b5ac;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+.presentBottom nav {
+  display: grid;
+  gap: 0.5rem;
+}
+.archive {
+  padding: 4rem var(--gutter);
+  border-top: 1px solid var(--rule);
+  background: #1a1a18;
+}
+.archive h2 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  letter-spacing: -0.04em;
+}
+.archive details {
+  margin-block: 2rem;
+  border-block: 1px solid var(--rule);
+}
+.archive summary {
+  position: relative;
+  cursor: pointer;
+  padding: 1.25rem 0.5rem;
+  font-size: 0.9rem;
+}
+.archive summary > span {
+  position: absolute;
+  right: 0.5rem;
+  color: #f2c500;
+  font-size: 1.5rem;
+  top: 0.9rem;
+}
+.archive details[open] summary > span {
+  transform: rotate(45deg);
+}
+.archive dl > div {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 2rem;
+  padding: 1.25rem 0.5rem;
+  border-top: 1px solid var(--rule);
+}
+.archive dt {
+  font: 600 1.5rem / 1.2 var(--font-barlow-condensed);
+  color: #f2c500;
+}
+.archive dd {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  max-width: 78ch;
+}
+.archiveNote {
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: #b8b5ac;
+  max-width: 85ch;
+}
+
+/* Native scroll timelines enhance a readable, fully visible static composition. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .rioBranco {
+      animation: convergeLeft linear both;
+      animation-timeline: --origins;
+      animation-range: entry 15% exit 65%;
+    }
+    .julho {
+      animation: convergeRight linear both;
+      animation-timeline: --origins;
+      animation-range: entry 15% exit 65%;
+    }
+    .stadiumImage {
+      animation: illuminate linear both;
+      animation-timeline: --lights;
+      animation-range: entry 20% cover 60%;
+    }
+    .homeSearch .fieldLine {
+      animation: traceField linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 45%;
+    }
+  }
+}
+@keyframes convergeLeft {
+  from {
+    transform: translateX(-1.5rem);
+  }
+  to {
+    transform: translateX(1.5rem);
+  }
+}
+@keyframes convergeRight {
+  from {
+    transform: translateX(1.5rem);
+  }
+  to {
+    transform: translateX(-1.5rem);
+  }
+}
+@keyframes illuminate {
+  from {
+    filter: brightness(0.4) saturate(0.5);
+    transform: scale(1.06);
+  }
+  to {
+    filter: brightness(1) saturate(1);
+    transform: scale(1);
+  }
+}
+@keyframes traceField {
+  from {
+    clip-path: inset(0 85% 0 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .beat > *,
+  .homeSteps article > * {
+    transition: transform 650ms ease;
+  }
+  .scene[data-seen="true"] .beat > *,
+  .scene[data-seen="true"] .homeSteps article > * {
+    transform: translateY(-0.4rem);
+  }
+}
+@media (max-width: 63.99rem) {
+  .progress {
+    top: 4rem;
+  }
+  .current {
+    display: none;
+  }
+  .openingCopy {
+    width: 70%;
+  }
+  .resilience {
+    gap: 2rem;
+  }
+  .terraces li {
+    margin-left: 0;
+  }
+  .paperColumns {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .paperLead {
+    grid-column: 1 / -1;
+    max-width: 25ch;
+  }
+  .stickyCopy,
+  .immortalsAnchor {
+    top: 9rem;
+  }
+}
+@media (max-width: 47.99rem) {
+  .scene {
+    padding-block: 4rem;
+  }
+  .story :is(section, h2) {
+    scroll-margin-top: 8rem;
+  }
+  .progress {
+    font-size: 0.65rem;
+    padding-block: 0.5rem;
+  }
+  .progress a {
+    gap: 0.5rem;
+  }
+  .opening {
+    min-height: calc(100svh - 7rem);
+    padding-top: 1.5rem;
+  }
+  .openingTop > p {
+    font-size: 0.6rem;
+  }
+  .openingYear {
+    top: 0.45em;
+    font-size: 66vw;
+  }
+  .openingCopy {
+    margin: 9rem 0 0;
+    width: 100%;
+  }
+  .openingCopy h2 {
+    font-size: clamp(2.7rem, 10.8vw, 4rem);
+  }
+  .openingCopy .prose {
+    max-width: 26ch;
+  }
+  .edgeNote {
+    display: none;
+  }
+  .originGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+  .originGrid h3 {
+    font-size: clamp(4rem, 17vw, 7rem);
+  }
+  .rioBranco,
+  .julho {
+    animation: none;
+    transform: none;
+  }
+  .originRule {
+    width: 100%;
+    margin-top: 1.5rem;
+    height: 0.3rem;
+  }
+  .convergeNote {
+    margin-top: 3rem;
+  }
+  .foundation {
+    padding-bottom: 0;
+  }
+  .foundationDate {
+    font-size: 30vw;
+  }
+  .foundationCopy {
+    grid-template-columns: 1fr;
+    margin-block: 2.5rem 3rem;
+  }
+  .homeSearch,
+  .immortals,
+  .resilience {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .stickyCopy,
+  .immortalsAnchor {
+    position: static;
+  }
+  .homeSteps article {
+    min-height: 0;
+    padding-block: 2rem 3rem;
+  }
+  .fieldLine {
+    margin-block: 2rem 1rem;
+  }
+  .immortalsYear {
+    font-size: 38vw;
+  }
+  .immortalsAnchor h2 {
+    margin-top: 1rem;
+  }
+  .beat {
+    min-height: 0;
+    padding-block: 3rem;
+  }
+  .invincible {
+    font-size: 20vw;
+  }
+  .score {
+    font-size: 29vw;
+  }
+  .yearRun {
+    justify-content: start;
+    gap: 1rem 1.5rem;
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+  .landNote {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .derbyTop {
+    flex-direction: column;
+    gap: 0;
+  }
+  .derbyScore {
+    font-size: 34vw;
+  }
+  .derbyBottom {
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+  }
+  .paperMasthead {
+    font-size: 0.9rem;
+  }
+  .newspaper h2 {
+    font-size: clamp(3rem, 14vw, 6rem);
+  }
+  .paperColumns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .paperLead {
+    grid-column: auto;
+  }
+  .paperResult {
+    display: flex;
+    align-items: start;
+    gap: 2rem;
+    padding-left: 0;
+    padding-top: 1.5rem;
+    border-left: 0;
+    border-top: 1px solid #0a0a0940;
+  }
+  .paperResult b {
+    font-size: 3rem;
+  }
+  .paperResult p {
+    margin-top: 0;
+  }
+  .terraces li {
+    grid-template-columns: 5rem 1fr;
+    gap: 1rem;
+    padding-block: 1.5rem 2rem;
+  }
+  .terraces li > span {
+    font-size: 2.7rem;
+  }
+  .lightsHeading {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .lightsHeading .eyebrow {
+    margin-bottom: 0;
+  }
+  .stadiumFrame {
+    margin-inline: calc(-1 * var(--gutter));
+  }
+  .stadiumImage {
+    min-height: 16rem;
+    object-fit: cover;
+    object-position: 60% center;
+  }
+  .hundred {
+    font-size: 40vw;
+  }
+  .hundred span {
+    font-size: 8vw;
+  }
+  .centennialCopy,
+  .presentBottom {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .present h2 {
+    font-size: clamp(2.1rem, 8.6vw, 4rem);
+  }
+  .presentBottom {
+    margin-top: 2.5rem;
+  }
+  .archive {
+    padding-block: 3rem;
+  }
+  .archive dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story *,
+  .story *::before,
+  .story *::after {
+    animation: none;
+    transition: none;
+  }
+  .stickyCopy,
+  .immortalsAnchor {
+    position: static;
+  }
+  .homeSteps article,
+  .beat {
+    min-height: 0;
+  }
+  .stadiumImage {
+    filter: none;
+    transform: none;
+  }
+  .fieldLine {
+    clip-path: none;
+  }
+}
+
+@media (max-height: 47rem) {
+  .stickyCopy,
+  .immortalsAnchor {
+    position: static;
+  }
+  .homeSteps article,
+  .beat {
+    min-height: 0;
+  }
+}

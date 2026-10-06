@@ -1,0 +1,504 @@
+.hub {
+  --gutter: clamp(1.25rem, 5vw, 6rem);
+  overflow: clip;
+}
+.section {
+  padding: clamp(4rem, 7vw, 7rem) var(--gutter);
+  position: relative;
+}
+.marker {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-bage-jalde);
+  font: 500 1.25rem / 1 var(--font-barlow-condensed);
+}
+.marker::before {
+  content: "";
+  width: 3rem;
+  height: 2px;
+  background: currentColor;
+}
+.sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.sectionHeading h2,
+.now h2 {
+  font-size: clamp(2.75rem, 5.5vw, 5.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+.destination {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 44px;
+  padding-block: 0.7rem;
+  border-bottom: 1px solid currentColor;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  text-decoration: none;
+}
+.destination span {
+  font-size: 1.25rem;
+  transition: transform 300ms ease;
+}
+.destination:focus-visible,
+.railControls button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+.destination:is(:hover, :focus-visible) span {
+  transform: translate(3px, -3px);
+}
+.now {
+  border-top: 1px solid #f2c500;
+}
+.nowHeading .marker {
+  margin-bottom: 1rem;
+}
+.squad {
+  background: var(--color-bage-charcoal);
+  padding-bottom: 0;
+}
+.squad h2 span {
+  color: var(--color-bage-jalde);
+}
+.rail {
+  position: relative;
+  margin-inline: calc(-1 * var(--gutter));
+}
+.railControls {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: end;
+  padding: 0 var(--gutter) 1.5rem;
+}
+.railControls button {
+  width: 48px;
+  height: 44px;
+  border-bottom: 1px solid #f2c500;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-bage-jalde);
+}
+.railControls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.railControls .playControl {
+  width: auto;
+  padding-inline: 0.75rem;
+  font: 600 0.7rem var(--font-archivo);
+  text-transform: uppercase;
+}
+.track {
+  display: flex;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-color: var(--color-bage-jalde) #272723;
+  scrollbar-width: thin;
+  padding-bottom: 1.5rem;
+  cursor: grab;
+  user-select: none;
+}
+.track:active {
+  cursor: grabbing;
+}
+.railSet {
+  display: flex;
+  flex: none;
+  padding-left: var(--gutter);
+  list-style: none;
+}
+.railSet li {
+  flex: 0 0 clamp(16rem, 24vw, 22rem);
+  width: clamp(16rem, 24vw, 22rem);
+  min-width: 0;
+}
+.athlete {
+  display: block;
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  height: clamp(27rem, 36vw, 33rem);
+  border-right: 1px solid #f4f1e817;
+  text-decoration: none;
+}
+.athlete::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 55% 0 0;
+  background: linear-gradient(0deg, #1a1a18 5%, #1a1a18d9 45%, transparent);
+  pointer-events: none;
+}
+.athletePlane {
+  position: absolute;
+  width: 26%;
+  inset: 12% 25% 10% auto;
+  background: linear-gradient(180deg, #f2c500 0 15%, #343326 15%);
+  transform: skewX(-18deg);
+  transform-origin: center;
+}
+.athleteNumber {
+  position: absolute;
+  z-index: 0;
+  left: 1rem;
+  top: 1rem;
+  font: 600 clamp(7rem, 10vw, 10rem) / 0.8 var(--font-barlow-condensed);
+  color: #f2c50065;
+}
+.portrait {
+  z-index: 1;
+  object-fit: contain;
+  transform-origin: center bottom;
+}
+.athleteIdentity {
+  position: absolute;
+  z-index: 3;
+  inset: auto 1.25rem 2rem;
+}
+.athleteIdentity p {
+  font-size: 0.65rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+  color: var(--color-foreground-secondary);
+}
+.athleteIdentity h3 {
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+  max-width: 11ch;
+}
+.athleteArrow {
+  display: block;
+  margin-top: 1rem;
+  color: var(--color-bage-jalde);
+  font-size: 1.5rem;
+}
+.portrait,
+.athletePlane,
+.athleteNumber,
+.athleteArrow,
+.athleteIdentity h3 {
+  transition:
+    transform 300ms ease,
+    color 300ms ease;
+}
+.athlete:focus-visible {
+  outline: 3px solid var(--color-bage-jalde);
+  outline-offset: -3px;
+}
+.athlete:focus-visible .portrait {
+  transform: translateY(-6px) scale(1.02);
+}
+.athlete:focus-visible .athletePlane {
+  transform: translateY(6px) skewX(-18deg) scaleX(1.1);
+}
+.athlete:focus-visible .athleteNumber {
+  transform: translateY(-2px);
+}
+.athlete:focus-visible h3 {
+  color: var(--color-bage-jalde);
+}
+.athlete:focus-visible .athleteArrow {
+  transform: translateX(4px);
+}
+@media (hover: hover) {
+  .athlete:hover .portrait {
+    transform: translateY(-6px) scale(1.02);
+  }
+  .athlete:hover .athletePlane {
+    transform: translateY(6px) skewX(-18deg) scaleX(1.1);
+  }
+  .athlete:hover .athleteNumber {
+    transform: translateY(-2px);
+  }
+  .athlete:hover h3 {
+    color: var(--color-bage-jalde);
+  }
+  .athlete:hover .athleteArrow {
+    transform: translateX(4px);
+  }
+}
+.season {
+  background: var(--color-bage-ivory);
+  color: var(--color-bage-black);
+}
+.season .marker {
+  color: #786100;
+}
+.seasonYear {
+  font: 600 1.3em / 1 var(--font-barlow-condensed);
+}
+.seasonLayout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 5vw, 6rem);
+}
+.latest,
+.previous {
+  min-width: 0;
+}
+.matchMeta,
+.matchFoot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.latest .matchMeta {
+  border-top: 3px solid var(--color-bage-jalde);
+  padding-top: 1rem;
+}
+.scoreline {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding-block: 2rem;
+}
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.teamCrest {
+  width: 3.5rem;
+  height: 4rem;
+  object-fit: contain;
+}
+.score {
+  display: flex;
+  gap: 0.2em;
+  font: 600 clamp(3rem, 6vw, 6.5rem) / 1 var(--font-barlow-condensed);
+}
+.score span {
+  font-weight: 300;
+  color: #777568;
+}
+.result {
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #786100;
+}
+.previousMatches {
+  border-left: 1px solid #0a0a0926;
+  padding-left: 2rem;
+}
+.previous + .previous {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #0a0a0926;
+}
+.previous .scoreline {
+  padding-block: 1rem;
+}
+.previous .team {
+  flex-direction: row;
+  gap: 0.5rem;
+  text-align: left;
+  font-size: 0.7rem;
+}
+.previous .teamCrest {
+  width: 2rem;
+  height: 2.5rem;
+}
+.previous .score {
+  font-size: 2.5rem;
+}
+.specialScore {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+.seasonTotals {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid #0a0a0926;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+}
+.seasonTotals > div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.seasonTotals dt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  order: 1;
+}
+.seasonTotals dd {
+  font: 500 2.75rem / 1 var(--font-barlow-condensed);
+}
+.history {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding-block: clamp(5rem, 10vw, 10rem);
+}
+.history h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.history h2 > span {
+  display: block;
+  margin-left: -0.03em;
+  margin-top: 0.07em;
+  font: 600 clamp(7rem, 22vw, 22rem) / 0.8 var(--font-barlow-condensed);
+  letter-spacing: -0.025em;
+  color: var(--color-bage-jalde);
+}
+.historyDetail {
+  border-left: 1px solid #f2c50066;
+  padding-left: 3rem;
+}
+.historyCrest {
+  width: 7.5rem;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.historyDetail p {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  max-width: 22ch;
+  line-height: 1.7;
+}
+.sponsors {
+  background: var(--color-bage-ivory);
+  color: var(--color-bage-black);
+  text-align: center;
+}
+.sponsors h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.sponsors h2::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 3rem;
+  margin: 1.5rem auto 2.5rem;
+  background: #786100;
+}
+.sponsorGrid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.5rem 1.25rem;
+  align-items: center;
+}
+.sponsorGrid li {
+  display: grid;
+  place-items: center;
+}
+.sponsorLogo {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 63.99rem) {
+  .seasonLayout {
+    grid-template-columns: 1fr;
+  }
+  .previousMatches {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .previous .team {
+    font-size: 0.85rem;
+  }
+  .sponsorGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 47.99rem) {
+  .sectionHeading {
+    align-items: start;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .railSet li {
+    flex-basis: 78vw;
+    width: 78vw;
+  }
+  .athlete {
+    height: 29rem;
+  }
+  .athleteNumber {
+    font-size: 9rem;
+  }
+  .athleteIdentity h3 {
+    font-size: 2.4rem;
+  }
+  .seasonTotals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .history {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .historyDetail {
+    padding-left: 1.5rem;
+  }
+  .historyCrest {
+    width: 5rem;
+  }
+  .sponsorGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 0.75rem;
+  }
+  .scoreline {
+    gap: 0.5rem;
+  }
+  .previous .team {
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.75rem;
+  }
+  .matchMeta {
+    font-size: 0.6rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .destination span,
+  .portrait,
+  .athletePlane,
+  .athleteNumber,
+  .athleteArrow,
+  .athleteIdentity h3 {
+    transition: none;
+  }
+  .athlete:is(:hover, :focus-visible) .portrait,
+  .athlete:is(:hover, :focus-visible) .athleteNumber,
+  .athlete:is(:hover, :focus-visible) .athleteArrow,
+  .destination:is(:hover, :focus-visible) span {
+    transform: none;
+  }
+  .athlete:is(:hover, :focus-visible) .athletePlane {
+    transform: skewX(-18deg);
+  }
+}

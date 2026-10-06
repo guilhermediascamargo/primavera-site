@@ -1,0 +1,70 @@
+.opening {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  isolation: isolate;
+}
+.photograph {
+  grid-area: 1 / 1;
+  position: relative;
+  min-height: max(43rem, 92svh);
+  background: var(--color-bage-charcoal);
+}
+.photograph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, #0a0a09b8, transparent 25%),
+    linear-gradient(0deg, #0a0a09fa, #0a0a09b0 28%, transparent 67%);
+}
+.image {
+  object-fit: cover;
+  object-position: 51% 28%;
+}
+.editorial {
+  grid-area: 1 / 1;
+  position: relative;
+  align-self: end;
+  padding: 16rem 1.25rem 2rem;
+}
+.fixture {
+  min-width: 0;
+}
+.result {
+  min-width: 0;
+}
+@media (min-width: 40rem) {
+  .editorial {
+    padding-inline: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+@media (min-width: 64rem) {
+  .opening {
+    grid-template-columns: minmax(0, 1fr) minmax(19rem, 26%);
+  }
+  .photograph {
+    grid-area: 1 / 1 / 2 / 3;
+    min-height: max(43rem, calc(100svh - 7.5rem));
+  }
+  .photograph::after {
+    background:
+      linear-gradient(180deg, #0a0a09c9, transparent 25%),
+      linear-gradient(25deg, #0a0a09f2, #0a0a0970 34%, transparent 64%);
+  }
+  .image {
+    object-position: center 30%;
+  }
+  .editorial {
+    padding: 12rem clamp(2.5rem, 5vw, 6rem) 3.5rem;
+  }
+  .fixture {
+    grid-area: 1 / 2;
+    position: relative;
+    align-self: end;
+    margin-top: 8rem;
+  }
+  .result {
+    grid-column: 1 / -1;
+  }
+}

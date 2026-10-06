@@ -1,0 +1,122 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  min-height: max(37rem, calc(100svh - 5rem));
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(115deg, #0a0a09 35%, #20201b);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 35% 0 0;
+  pointer-events: none;
+  background: linear-gradient(0deg, #0a0a09 4%, #0a0a09a6 38%, transparent 76%);
+}
+.context {
+  position: absolute;
+  z-index: 4;
+  top: 1rem;
+  left: 1.25rem;
+}
+.number {
+  position: absolute;
+  z-index: 0;
+  top: 3.5rem;
+  right: 0.03em;
+  color: var(--color-bage-jalde);
+  font-family: var(--font-barlow-condensed);
+  font-weight: 700;
+  font-size: clamp(23rem, 95vw, 44rem);
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+  user-select: none;
+}
+.graphic {
+  position: absolute;
+  inset: -15% 15% 0 55%;
+  transform: skewX(-18deg);
+  background: linear-gradient(180deg, #f2c500 0 28%, #343326 28% 100%);
+}
+.portrait {
+  position: absolute;
+  z-index: 1;
+  inset: 3.5rem 0 8rem;
+}
+.withoutPortrait .graphic {
+  opacity: 0.35;
+}
+.crest {
+  position: absolute;
+  z-index: 3;
+  top: 1.75rem;
+  right: 1.25rem;
+  width: 3rem;
+  height: auto;
+}
+.identity {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 20rem 1.25rem 2rem;
+}
+.name {
+  font-size: clamp(3rem, 14vw, 9rem);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+@media (min-width: 40rem) {
+  .identity {
+    padding-inline: 3rem;
+    padding-bottom: 3rem;
+  }
+  .context {
+    left: 3rem;
+    top: 2rem;
+  }
+  .crest {
+    right: 3rem;
+    top: 3rem;
+  }
+}
+@media (min-width: 64rem) {
+  .hero {
+    min-height: max(40rem, calc(100svh - 6rem));
+  }
+  .number {
+    top: -0.08em;
+    right: 0.05em;
+    font-size: clamp(42rem, 64vw, 78rem);
+  }
+  .portrait {
+    inset: 1.5rem 0 0 35%;
+  }
+  .identity {
+    padding: 16rem 5vw 4rem;
+  }
+  .name {
+    max-width: 65%;
+    font-size: clamp(6rem, 10vw, 12rem);
+  }
+  .context {
+    left: 5vw;
+    top: 2rem;
+  }
+  .crest {
+    right: 5vw;
+    top: 3rem;
+    width: 4.5rem;
+  }
+  .hero::after {
+    background: linear-gradient(
+      0deg,
+      #0a0a09 0%,
+      #0a0a0970 36%,
+      transparent 80%
+    );
+  }
+}

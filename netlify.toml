@@ -1,0 +1,11 @@
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "24"
+  PNPM_VERSION = "11.19.0"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Configuração preparada; nenhum site ou deploy foi criado.
+# O adaptador Next.js é gerenciado pela Netlify, sem SDK no domínio.

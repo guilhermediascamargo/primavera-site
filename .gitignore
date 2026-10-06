@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+coverage/
+.netlify/
+.pnpm-store/
+*.tsbuildinfo
+next-env.d.ts
+.env*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+*.pem
+*.key

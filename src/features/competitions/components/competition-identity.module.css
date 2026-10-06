@@ -1,0 +1,15 @@
+.identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  vertical-align: middle;
+}
+.logo {
+  width: 2.8rem;
+  height: 2.8rem;
+  object-fit: contain;
+}
+.identity[data-competition="Copa FGF"] .logo {
+  width: 3.1rem;
+  height: 3.1rem;
+}

@@ -1,0 +1,38 @@
+.countdown {
+  min-height: 8rem;
+  margin-block: 1.5rem;
+  border-bottom: 1px solid #f4f1e833;
+  padding-bottom: 1rem;
+}
+.label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-bage-jalde);
+  margin-bottom: 0.5rem;
+}
+.units {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.units > div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.units dt {
+  font-size: 0.6rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-foreground-secondary);
+}
+.units dd {
+  font: 600 clamp(2.5rem, 4vw, 4rem) / 1 var(--font-barlow-condensed);
+}
+.neutral {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-foreground-secondary);
+  padding-block: 1.5rem;
+}

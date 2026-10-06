@@ -1,0 +1,319 @@
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: clip;
+  background: #151513;
+  border: 1px solid #33332c;
+  border-radius: 3px;
+  box-shadow: 0 8px 24px #0002;
+  transition:
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+.stadium {
+  position: relative;
+  isolation: isolate;
+  min-height: 142px;
+  background:
+    repeating-linear-gradient(120deg, transparent 0 44px, #f2c50008 44px 45px),
+    linear-gradient(135deg, #393629, #171714);
+}
+.stadium::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(0deg, #0a0a09e6, transparent 85%),
+    linear-gradient(90deg, #0a0a0920, #0a0a0910);
+}
+.stadiumImage {
+  object-fit: cover;
+  object-position: center 55%;
+  transition: transform 300ms ease;
+}
+.stadiumCaption {
+  position: absolute;
+  z-index: 2;
+  bottom: 1rem;
+  left: 1.1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 0 1px 8px #000;
+}
+.stadiumCaption small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-foreground-secondary);
+}
+.venueMarker {
+  font-size: 1.4rem;
+  color: var(--color-bage-jalde);
+}
+.homeAway {
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  left: 1.1rem;
+  padding: 0.3rem 0.65rem;
+  background: #0a0a09e6;
+  color: var(--color-bage-ivory);
+  border-left: 2px solid var(--color-bage-jalde);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.content {
+  min-width: 0;
+  padding: 1.15rem;
+}
+.topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.topline p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+.competition {
+  color: var(--color-bage-jalde);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.round {
+  color: var(--color-foreground-secondary);
+  border-left: 1px solid #4d4b41;
+  padding-left: 0.65rem;
+}
+.topline time {
+  color: var(--color-foreground-secondary);
+  font-family: var(--font-barlow-condensed);
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+.scoreboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: center;
+  padding: 1.6rem 0 1.3rem;
+}
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  text-align: center;
+  font-size: clamp(0.75rem, 3.3vw, 0.8rem);
+  font-weight: 600;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.crest {
+  width: 44px;
+  height: 54px;
+  object-fit: contain;
+}
+.monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 54px;
+  border-top: 1px solid #727064;
+  border-bottom: 1px solid #727064;
+  font-family: var(--font-barlow-condensed);
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+  color: #ccc8ba;
+}
+.bage {
+  color: var(--color-bage-ivory);
+}
+.scoreBlock {
+  text-align: center;
+}
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-barlow-condensed);
+  font-size: clamp(3rem, 14vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1;
+}
+.scoreDivider {
+  color: #777568;
+  font-size: 1.7rem;
+}
+.finished {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.75rem;
+  color: var(--color-foreground-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.bottomline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  border-top: 1px solid #ffffff12;
+  padding-top: 0.85rem;
+}
+.result {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-bage-ivory);
+}
+.resultDot {
+  width: 5px;
+  height: 5px;
+  background: #a5a398;
+}
+.result[data-result="win"] {
+  color: var(--color-bage-jalde);
+}
+.result[data-result="win"] .resultDot {
+  background: var(--color-bage-jalde);
+}
+.result[data-result="loss"] .resultDot {
+  background: #d78a76;
+}
+.resultContext {
+  color: var(--color-foreground-secondary);
+  font-weight: 400;
+}
+.decider {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 0.8rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-bage-jalde);
+}
+.decider strong {
+  font-family: var(--font-barlow-condensed);
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.goals {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--color-foreground-secondary);
+}
+.goals h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 2.2;
+}
+.goals dl > div + div {
+  margin-top: 0.2rem;
+}
+.goals dt,
+.goals dd {
+  display: inline;
+}
+.goals dt {
+  color: var(--color-bage-ivory);
+  font-weight: 600;
+  margin-right: 0.45rem;
+}
+.goals dt::after {
+  content: ":";
+}
+.goalMinute {
+  white-space: nowrap;
+}
+.goals abbr {
+  text-decoration: none;
+  color: var(--color-bage-ivory);
+}
+@media (max-width: 359px) {
+  .scoreboard {
+    gap: 0.3rem;
+  }
+}
+@media (min-width: 640px) {
+  .content {
+    padding: 1.5rem 2rem;
+  }
+  .team {
+    font-size: 1rem;
+  }
+  .crest,
+  .monogram {
+    width: 60px;
+    height: 72px;
+  }
+  .score {
+    font-size: 4.5rem;
+    gap: 0.7rem;
+  }
+  .topline {
+    font-size: 0.75rem;
+  }
+  .result {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 1024px) {
+  .card {
+    grid-template-columns: minmax(170px, 27%) minmax(0, 1fr);
+  }
+  .stadium {
+    min-height: 100%;
+  }
+  .stadium::after {
+    background:
+      linear-gradient(0deg, #0a0a09f2, transparent 85%),
+      linear-gradient(90deg, transparent 50%, #15151370);
+  }
+  .scoreboard {
+    padding: 1.4rem 0;
+  }
+}
+@media (hover: hover) {
+  .card:hover {
+    border-color: #827039;
+    box-shadow: 0 8px 28px #0004;
+  }
+  .card:hover .stadiumImage {
+    transform: scale(1.025);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .stadiumImage {
+    transition: none;
+  }
+  .card:hover .stadiumImage {
+    transform: none;
+  }
+}
